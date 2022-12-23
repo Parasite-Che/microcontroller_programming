@@ -27,125 +27,45 @@ Project File Date:  11/03/2022
 <h2>Output:</h2>
 *** Using Compiler 'V6.18', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
 Build target 'Target 1'
-temperature_sensor.c(2): warning: In file included from...
-./temperature_sensor.h(19): warning: this function declaration is not a prototype [-Wstrict-prototypes]
-void search_ROM();
-               ^
-                void
-./temperature_sensor.h(20): warning: this function declaration is not a prototype [-Wstrict-prototypes]
-void read_ROM();
-             ^
-              void
-./temperature_sensor.h(21): warning: this function declaration is not a prototype [-Wstrict-prototypes]
-void match_ROM();
-              ^
-               void
-./temperature_sensor.h(22): warning: this function declaration is not a prototype [-Wstrict-prototypes]
-void skip_ROM();
-             ^
-              void
-./temperature_sensor.h(23): warning: this function declaration is not a prototype [-Wstrict-prototypes]
-void alarm_search();
-                 ^
-                  void
-./temperature_sensor.h(24): warning: this function declaration is not a prototype [-Wstrict-prototypes]
-void convert_T();
-              ^
-               void
-./temperature_sensor.h(25): warning: this function declaration is not a prototype [-Wstrict-prototypes]
-void write_scratchpad();
-                     ^
-                      void
-./temperature_sensor.h(26): warning: this function declaration is not a prototype [-Wstrict-prototypes]
-void read_scratchpad();
-                    ^
-                     void
-./temperature_sensor.h(27): warning: this function declaration is not a prototype [-Wstrict-prototypes]
-void copy_scratchpad();
-                    ^
-                     void
-./temperature_sensor.h(28): warning: this function declaration is not a prototype [-Wstrict-prototypes]
-void recall_E_cube();
-                  ^
-                   void
-./temperature_sensor.h(29): warning: this function declaration is not a prototype [-Wstrict-prototypes]
-void read_power_supply();
-                      ^
-                       void
-temperature_sensor.c(4): warning: implicit declaration of function 'srand' is invalid in C99 [-Wimplicit-function-declaration]
-        srand(time(NULL));
-        ^
-temperature_sensor.c(5): warning: implicit declaration of function 'rand' is invalid in C99 [-Wimplicit-function-declaration]
-        if(rand() % 2 == 1){
-           ^
-temperature_sensor.c(2): warning: In file included from...
-./temperature_sensor.h(6): warning: padding size of 'struct temp_sense' with 1 byte to alignment boundary [-Wpadded]
+main.c(2): warning: In file included from...
+./temperature_sensor.h(29): warning: padding size of 'struct temp_sense' with 1 byte to alignment boundary [-Wpadded]
 typedef struct temp_sense{
                ^
-temperature_sensor.c(22): warning: incompatible pointer types assigning to 'int64_t *' (aka 'long long *') from 'temp_sense *' (aka 'struct temp_sense *') [-Wincompatible-pointer-types]
-  adress = ts;
-         ^ ~~
-temperature_sensor.c(23): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
-        int8_t crc = 0;
-               ^
-temperature_sensor.c(25): warning: comparison of integers of different signs: 'int' and 'unsigned int' [-Wsign-compare]
-        for(int i = 2; i < sizeof(*adress) - 1; i++){
-                       ~ ^ ~~~~~~~~~~~~~~~~~~~
-temperature_sensor.c(31): warning: no previous prototype for function 'search_ROM' [-Wmissing-prototypes]
-void search_ROM(){
-     ^
-./temperature_sensor.h(19): note: this declaration is not a prototype; add 'void' to make it a prototype for a zero-parameter function
-void search_ROM();
-     ^
-                void
-temperature_sensor.c(31): warning: this old-style function definition is not preceded by a prototype [-Wstrict-prototypes]
-void search_ROM(){
-               ^
-temperature_sensor.c(35): warning: this function declaration is not a prototype [-Wstrict-prototypes]
-void read_ROM();
-             ^
-              void
-temperature_sensor.c(36): warning: this function declaration is not a prototype [-Wstrict-prototypes]
-void match_ROM();
-              ^
-               void
-temperature_sensor.c(37): warning: this function declaration is not a prototype [-Wstrict-prototypes]
-void skip_ROM();
-             ^
-              void
-temperature_sensor.c(38): warning: this function declaration is not a prototype [-Wstrict-prototypes]
-void alarm_search();
+main.c(12): warning: incompatible pointer types assigning to 'int64_t *' (aka 'long long *') from 'temp_sense *' (aka 'struct temp_sense *') [-Wincompatible-pointer-types]
+  adress = &ts;
+         ^ ~~~
+main.c(10): warning: unused variable 'size' [-Wunused-variable]
+        int size = sizeof(ts);
+            ^
+main.c(11): warning: variable 'adress' set but not used [-Wunused-but-set-variable]
+        int64_t *adress;
                  ^
-                  void
-temperature_sensor.c(39): warning: this function declaration is not a prototype [-Wstrict-prototypes]
-void convert_T();
-              ^
-               void
-temperature_sensor.c(40): warning: this function declaration is not a prototype [-Wstrict-prototypes]
-void write_scratchpad();
-                     ^
-                      void
-temperature_sensor.c(41): warning: this function declaration is not a prototype [-Wstrict-prototypes]
-void read_scratchpad();
-                    ^
-                     void
-temperature_sensor.c(42): warning: this function declaration is not a prototype [-Wstrict-prototypes]
-void copy_scratchpad();
-                    ^
-                     void
-temperature_sensor.c(43): warning: this function declaration is not a prototype [-Wstrict-prototypes]
-void recall_E_cube();
-                  ^
-                   void
-temperature_sensor.c(44): warning: this function declaration is not a prototype [-Wstrict-prototypes]
-void read_power_supply();
-                      ^
-                       void
-29 warnings generated.
+4 warnings generated.
+compiling main.c...
+temperature_sensor.c(5): warning: implicit declaration of function 'srand' is invalid in C99 [-Wimplicit-function-declaration]
+        srand(time(NULL));
+        ^
+temperature_sensor.c(6): warning: implicit declaration of function 'rand' is invalid in C99 [-Wimplicit-function-declaration]
+        if((rand() % 2) == 1){
+            ^
+temperature_sensor.c(2): warning: In file included from...
+./temperature_sensor.h(29): warning: padding size of 'struct temp_sense' with 1 byte to alignment boundary [-Wpadded]
+typedef struct temp_sense{
+               ^
+temperature_sensor.c(18): warning: implicit conversion changes signedness: 'int' to 'uint8_t' (aka 'unsigned char') [-Wsign-conversion]
+        ts.CRC = (int8_t)rand() % 0xFF;
+               ~ ~~~~~~~~~~~~~~~^~~~~~
+temperature_sensor.c(38): warning: no newline at end of file [-Wnewline-eof]
+*/
+  ^
+temperature_sensor.c(4): warning: unused parameter 'temps' [-Wunused-parameter]
+void fill_struct(temp_sense temps){
+                            ^
+6 warnings generated.
 compiling temperature_sensor.c...
 linking...
-Program Size: Code=820 RO-data=992 RW-data=4 ZI-data=3812  
-".\Objects\keil-LW3.axf" - 0 Error(s), 29 Warning(s).
+Program Size: Code=828 RO-data=992 RW-data=4 ZI-data=3812  
+".\Objects\keil-LW3.axf" - 0 Error(s), 10 Warning(s).
 
 <h2>Software Packages used:</h2>
 

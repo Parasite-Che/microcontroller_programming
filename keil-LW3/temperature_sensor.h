@@ -1,5 +1,22 @@
 #ifndef __TEMP_SENSE__
 #define __TEMP_SENSE__
+
+#define SENSE_ADR 0x20000C00
+
+#define search_ROM() = 0xF0
+#define read_ROM() = 0x33
+#define match_ROM() = 0x55
+#define skip_ROM() = 0xCC
+#define alarm_search() = 0xEC
+#define convert_T() = 0x44
+#define write_scratchpad() = 0x4E
+#define read_scratchpad() = 0xBE
+#define copy_scratchpad() = 0x48
+#define recall_E_cube() = 0xB8
+#define read_power_supply() = 0xB4
+
+#define ts (*((temp_sense*) SENSE_ADR))	
+
 #include <inttypes.h>
 
 
@@ -11,21 +28,10 @@ typedef struct temp_sense{
 	int8_t reserved_FFh;
 	int8_t reserved;
 	int8_t reserved_10h;
-	int8_t CRC;
+	uint8_t CRC;
 } temp_sense;
 
-void fill_struct(temp_sense* ts);
-int8_t CRC8(temp_sense* ts);
-void search_ROM();
-void read_ROM();
-void match_ROM();
-void skip_ROM();
-void alarm_search();
-void convert_T();
-void write_scratchpad();
-void read_scratchpad();
-void copy_scratchpad();
-void recall_E_cube();
-void read_power_supply();
+void fill_struct(temp_sense temps);
+uint8_t CRC8(temp_sense temps);
 
 #endif

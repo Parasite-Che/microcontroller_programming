@@ -1,11 +1,15 @@
 #include <stdlib.h>
 #include "temperature_sensor.h"
 
+
+
 int main(){
-	temp_sense *ts = (temp_sense*)0x20000C00;
-	int size = sizeof(*ts);
+	//ts = (temp_sense*)malloc(sizeof(temp_sense));
+	//temp_sense *ts2 = (temp_sense*)malloc(sizeof(temp_sense));
+	//ts = *ts2;
+	int size = sizeof(ts);
 	int64_t *adress;
-  adress = ts;
+  adress = &ts;
 	fill_struct(ts);
 	return 0;
 }

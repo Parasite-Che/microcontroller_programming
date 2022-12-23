@@ -22,19 +22,45 @@ Dialog DLL:      TCM.DLL V1.56.1.0
  
 <h2>Project:</h2>
 D:\distr\Keil_Projects\keil-LW5\keil-LW5.uvprojx
-Project File Date:  11/28/2022
+Project File Date:  11/29/2022
 
 <h2>Output:</h2>
 *** Using Compiler 'V6.18', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
 Build target 'Target 1'
-compiling system_ARMCM3.c...
+main.c(12): warning: incompatible integer to pointer conversion passing 'uint16_t' (aka 'unsigned short') to parameter of type 'uint16_t *' (aka 'unsigned short *'); take the address with & [-Wint-conversion]
+        uint16_t result1 = bitwise_CRC(message, 1);
+                                       ^~~~~~~
+                                       &
+main.c(5): note: passing argument to parameter 'message' here
+uint16_t bitwise_CRC(uint16_t *message, size_t len);
+                               ^
+main.c(13): warning: incompatible integer to pointer conversion passing 'uint16_t' (aka 'unsigned short') to parameter of type 'uint16_t *' (aka 'unsigned short *'); take the address with & [-Wint-conversion]
+        uint16_t result2 = tabular_CRC(message, 1);
+                                       ^~~~~~~
+                                       &
+main.c(6): note: passing argument to parameter 'message' here
+uint16_t tabular_CRC(uint16_t *message, size_t len);
+                               ^
+main.c(11): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+        uint16_t message = (uint16_t)rand();
+                 ^
+main.c(12): warning: unused variable 'result1' [-Wunused-variable]
+        uint16_t result1 = bitwise_CRC(message, 1);
+                 ^
+main.c(13): warning: unused variable 'result2' [-Wunused-variable]
+        uint16_t result2 = tabular_CRC(message, 1);
+                 ^
+main.c(72): warning: implicit conversion loses integer precision: 'size_t' (aka 'unsigned int') to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+    crc = j;
+        ~ ^
+main.c(69): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+  size_t i,j;
+         ^
+7 warnings generated.
 compiling main.c...
-compiling startup_ARMCM3.c...
 linking...
-.\Objects\keil-LW5.axf: Error: L6218E: Undefined symbol Image$$ARM_LIB_STACK$$ZI$$Limit (referred from startup_armcm3.o).
-Not enough information to list load addresses in the image map.
-Finished: 1 information, 0 warning and 1 error messages.
-".\Objects\keil-LW5.axf" - 1 Error(s), 0 Warning(s).
+Program Size: Code=1548 RO-data=992 RW-data=4 ZI-data=3908  
+".\Objects\keil-LW5.axf" - 0 Error(s), 7 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -58,8 +84,7 @@ Package Vendor: ARM
       Include file:  Device/ARM/ARMCM3/Include/ARMCM3.h
       Source file:   Device/ARM/ARMCM3/Source/system_ARMCM3.c
       Source file:   Device/ARM/ARMCM3/Source/startup_ARMCM3.c
-Target not created.
-Build Time Elapsed:  00:00:02
+Build Time Elapsed:  00:00:00
 </pre>
 </body>
 </html>
