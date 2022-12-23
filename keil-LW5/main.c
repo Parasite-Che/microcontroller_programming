@@ -8,9 +8,9 @@ uint8_t** GenerateCrc16Table(uint16_t poly);
 
 int main(){
 	srand(time(NULL));
-	uint16_t message = (uint16_t)rand();
-	uint16_t result1 = bitwise_CRC(message, 1);
-	uint16_t result2 = tabular_CRC(message, 1);
+	uint16_t message[2] = {0xF0F0, 0x0F0F};
+	uint16_t result1 = bitwise_CRC(message, 2);
+	uint16_t result2 = tabular_CRC(message, 2);
 	return 0;
 }
 
