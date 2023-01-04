@@ -27,26 +27,41 @@ Project File Date:  11/29/2022
 <h2>Output:</h2>
 *** Using Compiler 'V6.18', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
 Build target 'Target 1'
-main.c(11): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
-        uint16_t message[2] = {0xF0F0, 0x0F0F};
+main.c(18): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+        CRC crc_info = {16, 0x8005, 0};
+            ^
+main.c(20): warning: unused variable 'result1' [-Wunused-variable]
+        uint16_t result1 = bitwise_CRC((uint8_t*)message, 8, crc_info);
                  ^
-main.c(12): warning: unused variable 'result1' [-Wunused-variable]
-        uint16_t result1 = bitwise_CRC(message, 2);
+main.c(21): warning: unused variable 'result2' [-Wunused-variable]
+        uint16_t result2 = tabular_CRC((uint8_t*)message, 8, crc_info);
                  ^
-main.c(13): warning: unused variable 'result2' [-Wunused-variable]
-        uint16_t result2 = tabular_CRC(message, 2);
+main.c(57): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+        uint16_t crc = 0;
                  ^
-main.c(72): warning: implicit conversion loses integer precision: 'size_t' (aka 'unsigned int') to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
-    crc = j;
-        ~ ^
-main.c(69): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
-  size_t i,j;
-         ^
-5 warnings generated.
+main.c(30): warning: unused variable 'bits_read' [-Wunused-variable]
+        size_t bits_read = 0, bit_flag;
+               ^
+main.c(81): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+        size_t i, j;
+               ^
+main.c(74): warning: unused variable 'bits_read' [-Wunused-variable]
+        size_t bits_read = 0, bit_flag;
+               ^
+main.c(74): warning: unused variable 'bit_flag' [-Wunused-variable]
+        size_t bits_read = 0, bit_flag;
+                              ^
+main.c(81): warning: unused variable 'j' [-Wunused-variable]
+        size_t i, j;
+                  ^
+main.c(102): warning: implicit conversion loses integer precision: 'size_t' (aka 'unsigned int') to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+                c = j;
+                  ~ ^
+10 warnings generated.
 compiling main.c...
 linking...
-Program Size: Code=1500 RO-data=996 RW-data=4 ZI-data=3908  
-".\Objects\keil-LW5.axf" - 0 Error(s), 5 Warning(s).
+Program Size: Code=1620 RO-data=1516 RW-data=4 ZI-data=3908  
+".\Objects\keil-LW5.axf" - 0 Error(s), 10 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -70,7 +85,7 @@ Package Vendor: ARM
       Include file:  Device/ARM/ARMCM3/Include/ARMCM3.h
       Source file:   Device/ARM/ARMCM3/Source/system_ARMCM3.c
       Source file:   Device/ARM/ARMCM3/Source/startup_ARMCM3.c
-Build Time Elapsed:  00:00:00
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>

@@ -1,11 +1,11 @@
 <!doctype html public "-//w3c//dtd html 4.0 transitional//en">
 <html><head>
-<title>Static Call Graph - [.\Objects\keil-LW5.axf]</title></head>
+<title>Static Call Graph - [.\Objects\keil-LW5_2.axf]</title></head>
 <body><HR>
-<H1>Static Call Graph for image .\Objects\keil-LW5.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6180002: Last Updated: Tue Dec 27 13:53:31 2022
+<H1>Static Call Graph for image .\Objects\keil-LW5_2.axf</H1><HR>
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6180002: Last Updated: Sat Dec 24 17:50:43 2022
 <BR><P>
-<H3>Maximum Stack Usage =        160 bytes + Unknown(Untraceable Function Pointers)</H3><H3>
+<H3>Maximum Stack Usage =        120 bytes + Unknown(Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
 __rt_entry_main &rArr; main &rArr; tabular_CRC &rArr; malloc &rArr; __Heap_Full &rArr; __Heap_ProvideMemory &rArr; free
 <P>
@@ -160,7 +160,7 @@ Global Symbols
 <P><STRONG><a name="[5b]"></a>__rt_entry_postsh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000009))
 
 <P><STRONG><a name="[1f]"></a>__rt_entry_main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000D))
-<BR><BR>[Stack]<UL><LI>Max Depth = 160 + Unknown Stack Size
+<BR><BR>[Stack]<UL><LI>Max Depth = 120 + Unknown Stack Size
 <LI>Call Chain = __rt_entry_main &rArr; main &rArr; tabular_CRC &rArr; malloc &rArr; __Heap_Full &rArr; __Heap_ProvideMemory &rArr; free
 </UL>
 <BR>[Calls]<UL><LI><a href="#[21]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exit
@@ -389,7 +389,7 @@ Global Symbols
 <P><STRONG><a name="[5]"></a>UsageFault_Handler</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, startup_armcm3.o(.text.Default_Handler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_armcm3.o(RESET)
 </UL>
-<P><STRONG><a name="[38]"></a>GenerateCrc16Table</STRONG> (Thumb, 138 bytes, Stack size 20 bytes, main.o(.text.GenerateCrc16Table))
+<P><STRONG><a name="[38]"></a>GenerateCrc16Table</STRONG> (Thumb, 140 bytes, Stack size 20 bytes, main.o(.text.GenerateCrc16Table))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = GenerateCrc16Table
 </UL>
 <BR>[Called By]<UL><LI><a href="#[37]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tabular_CRC
@@ -408,14 +408,14 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Reset_Handler
 </UL>
 
-<P><STRONG><a name="[36]"></a>bitwise_CRC</STRONG> (Thumb, 318 bytes, Stack size 56 bytes, main.o(.text.bitwise_CRC))
-<BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = bitwise_CRC
+<P><STRONG><a name="[36]"></a>bitwise_CRC</STRONG> (Thumb, 150 bytes, Stack size 20 bytes, main.o(.text.bitwise_CRC))
+<BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = bitwise_CRC
 </UL>
 <BR>[Called By]<UL><LI><a href="#[20]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[20]"></a>main</STRONG> (Thumb, 120 bytes, Stack size 56 bytes, main.o(.text.main))
-<BR><BR>[Stack]<UL><LI>Max Depth = 160<LI>Call Chain = main &rArr; tabular_CRC &rArr; malloc &rArr; __Heap_Full &rArr; __Heap_ProvideMemory &rArr; free
+<P><STRONG><a name="[20]"></a>main</STRONG> (Thumb, 68 bytes, Stack size 32 bytes, main.o(.text.main))
+<BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = main &rArr; tabular_CRC &rArr; malloc &rArr; __Heap_Full &rArr; __Heap_ProvideMemory &rArr; free
 </UL>
 <BR>[Calls]<UL><LI><a href="#[29]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;srand
 <LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;time
@@ -425,8 +425,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[1f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
 </UL>
 
-<P><STRONG><a name="[37]"></a>tabular_CRC</STRONG> (Thumb, 140 bytes, Stack size 56 bytes, main.o(.text.tabular_CRC))
-<BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = tabular_CRC &rArr; malloc &rArr; __Heap_Full &rArr; __Heap_ProvideMemory &rArr; free
+<P><STRONG><a name="[37]"></a>tabular_CRC</STRONG> (Thumb, 230 bytes, Stack size 40 bytes, main.o(.text.tabular_CRC))
+<BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = tabular_CRC &rArr; malloc &rArr; __Heap_Full &rArr; __Heap_ProvideMemory &rArr; free
 </UL>
 <BR>[Calls]<UL><LI><a href="#[26]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;malloc
 <LI><a href="#[38]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GenerateCrc16Table
